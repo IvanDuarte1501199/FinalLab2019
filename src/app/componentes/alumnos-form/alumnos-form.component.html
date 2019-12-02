@@ -1,0 +1,37 @@
+<h3>Nuevo Alumno</h3>
+<form (ngSubmit)="grabarCliente()">
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">DNI</span>
+        </div>
+        <input name="alumnoDni" [(ngModel)]="nuevoAlumno.dni" type="text" class="form-control"
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+        </div>
+        <input name="alumnoNombre" [(ngModel)]="nuevoAlumno.nombre" type="text" class="form-control"
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
+        </div>
+        <input name="alumnoApellido" [(ngModel)]="nuevoAlumno.apellido" type="text" class="form-control"
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de Nacimiento</span>
+        </div>
+        <input name="alumnoFechaNacimiento" [(ngModel)]="nuevoAlumno.fechaNacimiento" type="text" class="form-control"
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+
+    <button class="btn btn-success">Grabar</button><br>
+</form>
