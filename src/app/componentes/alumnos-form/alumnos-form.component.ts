@@ -16,7 +16,7 @@ export class AlumnosFormComponent implements OnInit {
 
   ngOnInit() {
   }
-  grabarCliente() {
+  grabarAlumno() {
     if (this.edicion) {
       this._alumnoRepoService.actualizarAlumno(this.nuevoAlumno)
         .subscribe(
@@ -29,7 +29,7 @@ export class AlumnosFormComponent implements OnInit {
     } else {
       this._alumnoRepoService.agregarAlumno(this.nuevoAlumno)
         .subscribe((response) => {
-          console.log('se creo el cliente: ', response);
+          console.log('se creo el alumno: ', response);
           this.nuevoAlumno = new alumno(null, '', '','');
           this._alumnoRepoService.getAllAlumnos();
 
@@ -37,8 +37,8 @@ export class AlumnosFormComponent implements OnInit {
     }
   }
 
-  editarCliente(clienteId: number) {
-    this._alumnoRepoService.getAlumnoById(clienteId)
+  editarAlumno(alumnoId: number) {
+    this._alumnoRepoService.getAlumnoById(alumnoId)
       .subscribe(
         (alu) => {
           this.nuevoAlumno = alu;

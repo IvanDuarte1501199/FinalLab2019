@@ -1,1 +1,33 @@
-<p>alumnos-list works!</p>
+<div>
+    <h3 style="text-align: center;">Listado Alumnos</h3>
+  
+    <table class="table" style="border: solid 1px;">
+      <tr>
+        <th>Dni</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha de Nacimiento</th>
+      </tr>
+      <tr *ngFor="let alumno of _alumnoRepoService.listadoAlumnos">
+        <td>{{ alumno.dni }}</td>
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.apellido }}</td>
+        <td>{{ alumno.fechaNacimiento }}</td>
+        <td class="btn btn-danger" (click)="borrarAlumno(alumno.dni)">Borrar</td>
+        <td class="btn btn-warning" (click)="formulario.editarAlumno(alumno.dni)">Editar</td>
+      </tr>
+    </table>
+  
+    <!--
+    
+    <div style="margin: 40px  0px;">
+      <app-clientes-form #formulario></app-clientes-form>
+    </div>
+    <div style="margin: -77px 100px;">
+      <a class="btn btn-dark" routerLink="/">Atras</a><br>
+    </div>
+  -->
+    
+  
+  
+  </div>

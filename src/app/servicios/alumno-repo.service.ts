@@ -11,25 +11,25 @@ export class AlumnoRepoService {
   constructor(private _httpClient: HttpClient) { }
 
   getAllAlumnos() {
-    this._httpClient.get<alumno[]>('http://localhost:4000/api/clientes')
+    this._httpClient.get<alumno[]>('http://localhost:3000/alumnos')
     .subscribe(
       (data) => this.listadoAlumnos = data
     );
   }
  
-  getAlumnoById(clienteDni: number) {
-    return this._httpClient.get<alumno>(`http://localhost:4000/api/clientes/${clienteDni}`);
+  getAlumnoById(alumnoDni: number) {
+    return this._httpClient.get<alumno>(`http://localhost:3000/alumnos/${alumnoDni}`);
   }
 
   agregarAlumno(nuevoAlumno: alumno) {
-    return this._httpClient.post('http://localhost:4000/api/clientes', nuevoAlumno);
+    return this._httpClient.post('http://localhost:3000/alumnos', nuevoAlumno);
   }
 
-  borrarAlumno(clienteDni: number) {
-    return this._httpClient.delete(`http://localhost:4000/api/clientes/${clienteDni}`);
+  borrarAlumno(alumnoDni: number) {
+    return this._httpClient.delete(`http://localhost:3000/alumnos/${alumnoDni}`);
   }
 
   actualizarAlumno(alumno: alumno){
-    return this._httpClient.put(`http://localhost:4000/api/clientes/${alumno.dni}`, alumno);
+    return this._httpClient.put(`http://localhost:3000/alumnos/${alumno.dni}`, alumno);
   }
 }

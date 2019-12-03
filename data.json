@@ -1,0 +1,22 @@
+{
+  "alumnos": [
+    {
+      "dni": 1,
+      "nombre": "json-server",
+      "apellido": "typicode",
+      "fechaNacimiento": "15/01/1999"
+    },
+    {
+      "dni": 2,
+      "nombre": "satio",
+      "apellido": "tcas",
+      "fechaNacimiento": "12/11/1994"
+    },
+    {
+      "dni": 3,
+      "nombre": "ivan ",
+      "apellido": "dsad",
+      "fechaNacimiento": "125/011/14999"
+    }
+  ]
+}

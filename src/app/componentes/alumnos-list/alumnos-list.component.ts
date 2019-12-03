@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { alumno } from 'src/app/modelo/alumno';
+import { AlumnoRepoService } from 'src/app/servicios/alumno-repo.service';
 
 @Component({
   selector: 'app-alumnos-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlumnosListComponent implements OnInit {
 
-  constructor() { }
+  alumnoSeleccionado: alumno;
+
+  constructor(private _alumnoRepoService: AlumnoRepoService) { }
 
   ngOnInit() {
+    this._alumnoRepoService.getAllAlumnos();
   }
 
+  obtenerAlumno(alumnoId: number) {
+    this._alumnoRepoService.getAlumnoById(alumnoId)
+    .subscribe((cli) => {
+      this.alumnoSeleccionado = cli;
+    });
+  }
+
+  borrarAlumno(alumnoId: number) {
+    this._alumnoRepoService.borrarAlumno(alumnoId)
+    .subscribe((response) => {
+      console.log('se borro el alumno ', response);
+      this._alumnoRepoService.getAllAlumnos();
+    });
+  }
 }

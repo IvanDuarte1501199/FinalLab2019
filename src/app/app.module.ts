@@ -17,7 +17,6 @@ const rutas: Routes = [
   {path: 'profesores', component: ProfesoresListComponent },
   {path: 'profesores-form', component: ProfesoresFormComponent },
   {path: '', component: PantallaPrincipalComponent }
-
   ];
 
 
@@ -32,7 +31,10 @@ const rutas: Routes = [
     PantallaPrincipalComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(rutas)
   ],
   providers: [],
   bootstrap: [AppComponent]
