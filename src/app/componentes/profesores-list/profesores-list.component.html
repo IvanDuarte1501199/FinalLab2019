@@ -13,8 +13,8 @@
         <td>{{ profesor.nombre }}</td>
         <td>{{ profesor.apellido }}</td>
         <td>{{ profesor.fechaNacimiento }}</td>
-        <td class="btn btn-danger" (click)="borrarProfesor(profesor.dni)">Borrar</td>
-        <td class="btn btn-warning" (click)="formulario.editarProfesor(profesor.dni)">Editar</td>
+        <td class="btn btn-danger" (click)="borrarProfesor(profesor.id)">Borrar</td>
+        <td class="btn btn-warning" (click)="formulario.editarProfesor(profesor.id)">Editar</td>
       </tr>
     </table>
   <app-profesores-form #formulario></app-profesores-form>

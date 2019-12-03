@@ -17,19 +17,19 @@ export class AlumnoRepoService {
     );
   }
  
-  getAlumnoById(alumnoDni: number) {
-    return this._httpClient.get<alumno>(`http://localhost:3000/alumnos/${alumnoDni}`);
+  getAlumnoById(alumnoId: number) {
+    return this._httpClient.get<alumno>(`http://localhost:3000/alumnos/${alumnoId}`);
   }
 
   agregarAlumno(nuevoAlumno: alumno) {
     return this._httpClient.post('http://localhost:3000/alumnos',  nuevoAlumno);
   }
 
-  borrarAlumno(alumnoDni: number) {
-    return this._httpClient.delete(`http://localhost:3000/alumnos/${alumnoDni}`);
+  borrarAlumno(alumnoId: number) {
+    return this._httpClient.delete(`http://localhost:3000/alumnos/${alumnoId}`);
   }
 
   actualizarAlumno(alumno: alumno){
-    return this._httpClient.put(`http://localhost:3000/alumnos/${alumno.dni}`, alumno);
+    return this._httpClient.put(`http://localhost:3000/alumnos/${alumno.id}`, alumno);
   }
 }

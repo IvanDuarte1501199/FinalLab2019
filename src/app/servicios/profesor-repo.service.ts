@@ -17,19 +17,19 @@ export class ProfesorRepoService {
     );
   }
  
-  getProfesorById(profesorDni: number) {
-    return this._httpClient.get<profesor>(`http://localhost:3000/profesores/${profesorDni}`);
+  getProfesorById(profesorId: number) {
+    return this._httpClient.get<profesor>(`http://localhost:3000/profesores/${profesorId}`);
   }
 
   agregarProfesor(nuevoProfesor: profesor) {
     return this._httpClient.post('http://localhost:3000/profesores',  nuevoProfesor);
   }
 
-  borrarProfesor(profesorDni: number) {
-    return this._httpClient.delete(`http://localhost:3000/profesores/${profesorDni}`);
+  borrarProfesor(profesorId: number) {
+    return this._httpClient.delete(`http://localhost:3000/profesores/${profesorId}`);
   }
 
   actualizarProfesor(profesor: profesor){
-    return this._httpClient.put(`http://localhost:3000/profesores/${profesor.dni}`, profesor);
+    return this._httpClient.put(`http://localhost:3000/profesores/${profesor.id}`, profesor);
   }
 }

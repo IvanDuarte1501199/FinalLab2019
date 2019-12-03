@@ -17,15 +17,15 @@ export class ProfesoresListComponent implements OnInit {
     this._profesorRepoService.getAllProfesores();
   }
 
-  obtenerProfesor(alumnoDni: number) {
-    this._profesorRepoService.getProfesorById(alumnoDni)
+  obtenerProfesor(alumnoId: number) {
+    this._profesorRepoService.getProfesorById(alumnoId)
     .subscribe((alu) => {
       this.profesorSeleccionado = alu;
     });
   }
 
-  borrarProfesor(alumnoDni: number) {
-    this._profesorRepoService.borrarProfesor(alumnoDni)
+  borrarProfesor(alumnoId: number) {
+    this._profesorRepoService.borrarProfesor(alumnoId)
     .subscribe((response) => {
       console.log('se borro el profesor ', response);
       this._profesorRepoService.getAllProfesores();

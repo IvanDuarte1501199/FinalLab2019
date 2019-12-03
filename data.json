@@ -1,27 +1,34 @@
 {
   "alumnos": [
     {
+      "id": 1,
       "dni": "4214124",
-      "nombre": "dsadsa",
+      "nombre": "412",
       "apellido": "dsada",
-      "fechaNacimiento": "1111-12-14",
-      "id": 1
+      "fechaNacimiento": "4444-12-14"
     },
     {
-      "dni": "4512",
+      "id": 2,
+      "dni": "421",
       "nombre": "dsadsa",
-      "apellido": "rasrfds",
-      "fechaNacimiento": "0002-04-21",
-      "id": 2
+      "apellido": "dsada",
+      "fechaNacimiento": "1111-11-11"
+    },
+    {
+      "id": 3,
+      "dni": "421412",
+      "nombre": "ivan",
+      "apellido": "duarte",
+      "fechaNacimiento": "9199-01-15"
     }
   ],
   "profesores": [
     {
-      "dni": "421",
-      "nombre": "4214",
-      "apellido": "4214",
-      "fechaNacimiento": "1111-11-11",
-      "id": 1
+      "id": 1,
+      "dni": "421444",
+      "nombre": "oscar",
+      "apellido": "rufine",
+      "fechaNacimiento": "1972-12-13"
     }
   ]
 }
