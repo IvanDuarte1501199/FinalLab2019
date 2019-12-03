@@ -13,8 +13,8 @@ import { PantallaPrincipalComponent } from './componentes/pantalla-principal/pan
 
 const rutas: Routes = [
   {path: 'alumnos-form', component: AlumnosFormComponent },
-  {path: 'alumnos', component: AlumnosListComponent },
-  {path: 'profesores', component: ProfesoresListComponent },
+  {path: 'alumnos-list', component: AlumnosListComponent },
+  {path: 'profesores-list', component: ProfesoresListComponent },
   {path: 'profesores-form', component: ProfesoresFormComponent },
   {path: '', component: PantallaPrincipalComponent }
   ];
@@ -28,7 +28,7 @@ const rutas: Routes = [
     AlumnosListComponent,
     ProfesoresListComponent,
     ProfesoresFormComponent,
-    PantallaPrincipalComponent
+    PantallaPrincipalComponent,
   ],
   imports: [
     BrowserModule,

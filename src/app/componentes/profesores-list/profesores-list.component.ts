@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { profesor } from 'src/app/modelo/profesor';
+import { ProfesorRepoService } from 'src/app/servicios/profesor-repo.service';
 
 @Component({
   selector: 'app-profesores-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfesoresListComponent implements OnInit {
 
-  constructor() { }
+  profesorSeleccionado: profesor;
+
+  constructor(private _profesorRepoService: ProfesorRepoService) { }
 
   ngOnInit() {
+    this._profesorRepoService.getAllProfesores();
   }
 
+  obtenerProfesor(alumnoDni: number) {
+    this._profesorRepoService.getProfesorById(alumnoDni)
+    .subscribe((alu) => {
+      this.profesorSeleccionado = alu;
+    });
+  }
+
+  borrarProfesor(alumnoDni: number) {
+    this._profesorRepoService.borrarProfesor(alumnoDni)
+    .subscribe((response) => {
+      console.log('se borro el profesor ', response);
+      this._profesorRepoService.getAllProfesores();
+    });
+  }
 }

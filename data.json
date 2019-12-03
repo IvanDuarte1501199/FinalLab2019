@@ -1,22 +1,27 @@
 {
   "alumnos": [
     {
-      "dni": 1,
-      "nombre": "json-server",
-      "apellido": "typicode",
-      "fechaNacimiento": "15/01/1999"
+      "dni": "4214124",
+      "nombre": "dsadsa",
+      "apellido": "dsada",
+      "fechaNacimiento": "1111-12-14",
+      "id": 1
     },
     {
-      "dni": 2,
-      "nombre": "satio",
-      "apellido": "tcas",
-      "fechaNacimiento": "12/11/1994"
-    },
+      "dni": "4512",
+      "nombre": "dsadsa",
+      "apellido": "rasrfds",
+      "fechaNacimiento": "0002-04-21",
+      "id": 2
+    }
+  ],
+  "profesores": [
     {
-      "dni": 3,
-      "nombre": "ivan ",
-      "apellido": "dsad",
-      "fechaNacimiento": "125/011/14999"
+      "dni": "421",
+      "nombre": "4214",
+      "apellido": "4214",
+      "fechaNacimiento": "1111-11-11",
+      "id": 1
     }
   ]
 }

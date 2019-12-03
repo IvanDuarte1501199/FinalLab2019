@@ -17,15 +17,15 @@ export class AlumnosListComponent implements OnInit {
     this._alumnoRepoService.getAllAlumnos();
   }
 
-  obtenerAlumno(alumnoId: number) {
-    this._alumnoRepoService.getAlumnoById(alumnoId)
-    .subscribe((cli) => {
-      this.alumnoSeleccionado = cli;
+  obtenerAlumno(alumnoDni: number) {
+    this._alumnoRepoService.getAlumnoById(alumnoDni)
+    .subscribe((alu) => {
+      this.alumnoSeleccionado = alu;
     });
   }
 
-  borrarAlumno(alumnoId: number) {
-    this._alumnoRepoService.borrarAlumno(alumnoId)
+  borrarAlumno(alumnoDni: number) {
+    this._alumnoRepoService.borrarAlumno(alumnoDni)
     .subscribe((response) => {
       console.log('se borro el alumno ', response);
       this._alumnoRepoService.getAllAlumnos();

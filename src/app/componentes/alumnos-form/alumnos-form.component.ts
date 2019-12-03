@@ -10,7 +10,7 @@ import { AlumnoRepoService } from 'src/app/servicios/alumno-repo.service';
 })
 export class AlumnosFormComponent implements OnInit {
   
-  nuevoAlumno: alumno = new alumno(null,'','','');
+  nuevoAlumno: alumno = new alumno(null,'','',null);
   edicion: boolean = false;
   constructor(private _alumnoRepoService: AlumnoRepoService) { }
 
@@ -22,7 +22,7 @@ export class AlumnosFormComponent implements OnInit {
         .subscribe(
           (response) => {
             this.edicion = false;
-            this.nuevoAlumno = new alumno(null, '', '','');
+            this.nuevoAlumno = new alumno(null, '', '',null);
             this._alumnoRepoService.getAllAlumnos();
           }
         );
@@ -30,9 +30,8 @@ export class AlumnosFormComponent implements OnInit {
       this._alumnoRepoService.agregarAlumno(this.nuevoAlumno)
         .subscribe((response) => {
           console.log('se creo el alumno: ', response);
-          this.nuevoAlumno = new alumno(null, '', '','');
+          this.nuevoAlumno = new alumno(null, '', '',null);
           this._alumnoRepoService.getAllAlumnos();
-
         });
     }
   }

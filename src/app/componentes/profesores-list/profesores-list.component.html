@@ -1,1 +1,21 @@
-<p>profesores-list works!</p>
+<div>
+    <h3 style="text-align: center;">Listado Profesores</h3>
+  
+    <table class="table" style="border: solid 1px;">
+      <tr>
+        <th>Dni</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha de Nacimiento</th>
+      </tr>
+      <tr *ngFor="let profesor of _profesorRepoService.listadoProfesores">
+        <td>{{ profesor.dni }}</td>
+        <td>{{ profesor.nombre }}</td>
+        <td>{{ profesor.apellido }}</td>
+        <td>{{ profesor.fechaNacimiento }}</td>
+        <td class="btn btn-danger" (click)="borrarProfesor(profesor.dni)">Borrar</td>
+        <td class="btn btn-warning" (click)="formulario.editarProfesor(profesor.dni)">Editar</td>
+      </tr>
+    </table>
+  <app-profesores-form #formulario></app-profesores-form>
+  </div>

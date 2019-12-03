@@ -22,7 +22,7 @@ export class AlumnoRepoService {
   }
 
   agregarAlumno(nuevoAlumno: alumno) {
-    return this._httpClient.post('http://localhost:3000/alumnos', nuevoAlumno);
+    return this._httpClient.post('http://localhost:3000/alumnos',  nuevoAlumno);
   }
 
   borrarAlumno(alumnoDni: number) {
