@@ -1,0 +1,25 @@
+<div>
+    <h3 style="text-align: center;">Listado Cursos</h3>
+  
+    <table class="table" style="border: solid 1px;">
+      <tr>
+        <th>Nombre de curso</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha de Fin</th>
+        <th>Profesor</th>
+        <th>Profesor Auxiliar</th>
+      </tr>
+      <tr *ngFor="let curso of _cursoRepoService.listadoCursos">
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.fechaInicio }}</td>
+        <td>{{ curso.fechaFin }}</td>
+        <td>{{ curso.profesorId }}</td>
+        <td>{{ curso.profesorauxId }}</td>
+        <td class="btn btn-danger" (click)="borrarCurso(curso.id)">Borrar</td>
+        <td class="btn btn-warning" (click)="formulario.editarCurso(curso.id)">Editar</td>
+        <td class="btn btn-warning" (click)="formulario.editarCurso(curso.id)">Añadir Alumno</td>
+      </tr>
+    </table>
+    <app-cursos-form #formulario></app-cursos-form>
+  </div>
+

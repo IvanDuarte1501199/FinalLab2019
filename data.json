@@ -29,6 +29,86 @@
       "nombre": "oscar",
       "apellido": "rufine",
       "fechaNacimiento": "1972-12-13"
+    },
+    {
+      "id": 2,
+      "dni": "4214",
+      "nombre": "otro",
+      "apellido": "profe",
+      "fechaNacimiento": "1294-10-15"
+    },
+    {
+      "id": 3,
+      "dni": "51242",
+      "nombre": "otro profe",
+      "apellido": "mas",
+      "fechaNacimiento": "1932-11-11"
+    }
+  ],
+  "cursos": [
+    {
+      "id": 4,
+      "nombre": "programacion 3",
+      "fechaInicio": "1999-01-15",
+      "fechaFin": "2019-12-12",
+      "profesorId": 1,
+      "profesorauxId": 2
+    },
+    {
+      "id": 5,
+      "nombre": "programacion 2",
+      "fechaInicio": "1999-01-15",
+      "fechaFin": "2999-12-20",
+      "profesorId": 1,
+      "profesorauxId": 2
+    },
+    {
+      "id": 7,
+      "nombre": "programacion 2",
+      "fechaInicio": "1111-11-11",
+      "fechaFin": "2222-02-22",
+      "profesorId": 1,
+      "profesorauxId": 1
+    },
+    {
+      "id": 8,
+      "nombre": "programacion 2",
+      "fechaInicio": "2222-02-22",
+      "fechaFin": "1111-11-11",
+      "profesorId": 2,
+      "profesorauxId": 1
+    },
+    {
+      "id": 9,
+      "nombre": "fsafd",
+      "fechaInicio": "2222-02-22",
+      "fechaFin": "1111-11-11",
+      "profesorId": 2,
+      "profesorauxId": 1
+    },
+    {
+      "id": 10,
+      "nombre": "programacion 2",
+      "fechaInicio": "1111-11-11",
+      "fechaFin": "2222-02-22",
+      "profesorId": 1,
+      "profesorauxId": 2
+    },
+    {
+      "id": 11,
+      "nombre": "",
+      "fechaInicio": "1111-11-11",
+      "fechaFin": "2222-02-22",
+      "profesorId": 3,
+      "profesorauxId": 1
+    },
+    {
+      "id": 12,
+      "nombre": "programacion 3",
+      "fechaInicio": "1111-11-11",
+      "fechaFin": "2222-12-11",
+      "profesorId": 1,
+      "profesorauxId": 2
     }
   ]
 }

@@ -16,6 +16,13 @@ export class ProfesorRepoService {
       (data) => this.listadoProfesores = data
     );
   }
+  devolverProfesores() {
+    this._httpClient.get<profesor[]>('http://localhost:3000/profesores')
+    .subscribe(
+      (data) => this.listadoProfesores = data
+    );
+    return this.listadoProfesores;
+  }
  
   getProfesorById(profesorId: number) {
     return this._httpClient.get<profesor>(`http://localhost:3000/profesores/${profesorId}`);
