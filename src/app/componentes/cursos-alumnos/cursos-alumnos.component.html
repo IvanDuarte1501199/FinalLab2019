@@ -1,0 +1,18 @@
+<form (ngSubmit)="grabarCursoAlumno()">
+    <div>
+        <h3 style="text-align: center;">Informacion de Cursos</h3>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Curso</span>
+        </div>
+        
+        <select name="profesorId"  [(ngModel)]="nuevoAlumnoDeCurso.cursoId" (onChange)="cambiarCurso()">
+            <option  [ngValue]="curso.id" *ngFor="let curso of _cursoRepoService.listadoCursos">{{ curso.nombre }} </option>
+        </select>
+        <div [hidden]="nuevoAlumnoDeCurso.cursoId == null" >
+            {{nuevoAlumnoDeCurso.cursoId}} 
+        </div>
+        
+    </div>
+</form>

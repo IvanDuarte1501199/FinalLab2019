@@ -12,6 +12,7 @@ import { ProfesoresFormComponent } from './componentes/profesores-form/profesore
 import { PantallaPrincipalComponent } from './componentes/pantalla-principal/pantalla-principal.component';
 import { CursosFormComponent } from './componentes/cursos-form/cursos-form.component';
 import { CursosListComponent } from './componentes/cursos-list/cursos-list.component';
+import { CursosAlumnosComponent } from './componentes/cursos-alumnos/cursos-alumnos.component';
 
 const rutas: Routes = [
   {path: 'alumnos-form', component: AlumnosFormComponent },
@@ -20,6 +21,7 @@ const rutas: Routes = [
   {path: 'profesores-form', component: ProfesoresFormComponent },
   {path: 'cursos-list', component: CursosListComponent },
   {path: 'cursos-form', component: CursosFormComponent },
+  {path: 'cursos-alumnos', component: CursosAlumnosComponent },
   {path: '', component: PantallaPrincipalComponent }
   ];
 
@@ -35,6 +37,7 @@ const rutas: Routes = [
     PantallaPrincipalComponent,
     CursosFormComponent,
     CursosListComponent,
+    CursosAlumnosComponent,
   ],
   imports: [
     BrowserModule,

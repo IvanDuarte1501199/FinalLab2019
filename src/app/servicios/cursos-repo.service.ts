@@ -17,6 +17,14 @@ export class CursosRepoService {
       (data) => this.listadoCursos = data
     );
   }
+  
+  devolverCursos() {
+    this._httpClient.get<curso[]>('http://localhost:3000/cursos')
+    .subscribe(
+      (data) => this.listadoCursos = data
+    );
+    return this.listadoCursos;
+  }
  
   getCursoById(cursoId: number) {
     return this._httpClient.get<curso>(`http://localhost:3000/cursos/${cursoId}`);

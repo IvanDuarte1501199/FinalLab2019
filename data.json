@@ -13,13 +13,6 @@
       "nombre": "dsadsa",
       "apellido": "dsada",
       "fechaNacimiento": "1111-11-11"
-    },
-    {
-      "id": 3,
-      "dni": "421412",
-      "nombre": "ivan",
-      "apellido": "duarte",
-      "fechaNacimiento": "9199-01-15"
     }
   ],
   "profesores": [
@@ -47,66 +40,26 @@
   ],
   "cursos": [
     {
-      "id": 4,
-      "nombre": "programacion 3",
-      "fechaInicio": "1999-01-15",
-      "fechaFin": "2019-12-12",
-      "profesorId": 1,
-      "profesorauxId": 2
-    },
-    {
-      "id": 5,
-      "nombre": "programacion 2",
-      "fechaInicio": "1999-01-15",
-      "fechaFin": "2999-12-20",
-      "profesorId": 1,
-      "profesorauxId": 2
-    },
-    {
       "id": 7,
       "nombre": "programacion 2",
       "fechaInicio": "1111-11-11",
       "fechaFin": "2222-02-22",
       "profesorId": 1,
-      "profesorauxId": 1
-    },
-    {
-      "id": 8,
-      "nombre": "programacion 2",
-      "fechaInicio": "2222-02-22",
-      "fechaFin": "1111-11-11",
-      "profesorId": 2,
-      "profesorauxId": 1
-    },
-    {
-      "id": 9,
-      "nombre": "fsafd",
-      "fechaInicio": "2222-02-22",
-      "fechaFin": "1111-11-11",
-      "profesorId": 2,
-      "profesorauxId": 1
-    },
-    {
-      "id": 10,
-      "nombre": "programacion 2",
-      "fechaInicio": "1111-11-11",
-      "fechaFin": "2222-02-22",
-      "profesorId": 1,
       "profesorauxId": 2
     },
     {
-      "id": 11,
-      "nombre": "",
+      "id": 8,
+      "nombre": "programacion 21",
       "fechaInicio": "1111-11-11",
-      "fechaFin": "2222-02-22",
-      "profesorId": 3,
-      "profesorauxId": 1
+      "fechaFin": "3333-03-31",
+      "profesorId": 2,
+      "profesorauxId": 3
     },
     {
-      "id": 12,
-      "nombre": "programacion 3",
+      "id": 9,
+      "nombre": "programacion 2",
       "fechaInicio": "1111-11-11",
-      "fechaFin": "2222-12-11",
+      "fechaFin": "2222-02-22",
       "profesorId": 1,
       "profesorauxId": 2
     }

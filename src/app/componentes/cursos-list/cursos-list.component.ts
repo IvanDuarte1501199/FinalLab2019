@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { curso } from 'src/app/modelo/curso';
 import { CursosRepoService } from 'src/app/servicios/cursos-repo.service';
+import { profesor } from 'src/app/modelo/profesor';
+import { ProfesorRepoService } from 'src/app/servicios/profesor-repo.service';
 
 @Component({
   selector: 'app-cursos-list',
@@ -9,14 +11,15 @@ import { CursosRepoService } from 'src/app/servicios/cursos-repo.service';
 })
 export class CursosListComponent implements OnInit {
 
- cursoSeleccionado: curso;
-
-  constructor(private _cursoRepoService: CursosRepoService) { }
+  cursoSeleccionado: curso;
+  profesorDelCurso: profesor= new profesor(12,"ivan","cac",null );
+  constructor(private _cursoRepoService: CursosRepoService, private _profesorRepoService: ProfesorRepoService) { }
 
   ngOnInit() {
     this._cursoRepoService.getAllCursos();
   }
 
+  
   obtenerCurso(cursoId: number) {
     this._cursoRepoService.getCursoById(cursoId)
     .subscribe((alu) => {
@@ -31,4 +34,9 @@ export class CursosListComponent implements OnInit {
       this._cursoRepoService.getAllCursos();
     });
   }
+
+  AñadirAlumno(cursoId) {
+    
+  }
+  
 }

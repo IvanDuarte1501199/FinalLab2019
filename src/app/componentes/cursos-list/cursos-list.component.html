@@ -9,15 +9,14 @@
         <th>Profesor</th>
         <th>Profesor Auxiliar</th>
       </tr>
-      <tr *ngFor="let curso of _cursoRepoService.listadoCursos">
+      <tr *ngFor="let curso of _cursoRepoService.listadoCursos" >
         <td>{{ curso.nombre }}</td>
         <td>{{ curso.fechaInicio }}</td>
-        <td>{{ curso.fechaFin }}</td>
-        <td>{{ curso.profesorId }}</td>
+        <td>{{ curso.fechaFin }}</td> 
+        <td>{{ curso.profesorId  }}</td>
         <td>{{ curso.profesorauxId }}</td>
         <td class="btn btn-danger" (click)="borrarCurso(curso.id)">Borrar</td>
         <td class="btn btn-warning" (click)="formulario.editarCurso(curso.id)">Editar</td>
-        <td class="btn btn-warning" (click)="formulario.editarCurso(curso.id)">Añadir Alumno</td>
       </tr>
     </table>
     <app-cursos-form #formulario></app-cursos-form>

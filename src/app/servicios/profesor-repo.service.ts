@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { profesor } from '../modelo/profesor';
 import { HttpClient } from '@angular/common/http';
+import { CursosRepoService } from './cursos-repo.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfesorRepoService {
   listadoProfesores: profesor[] = [];
-
-  constructor(private _httpClient: HttpClient) { }
+  devolverProfesor: profesor;
+  constructor(private _httpClient: HttpClient,private _cursoRepoService:CursosRepoService) { }
 
   getAllProfesores() {
     this._httpClient.get<profesor[]>('http://localhost:3000/profesores')
@@ -39,4 +40,6 @@ export class ProfesorRepoService {
   actualizarProfesor(profesor: profesor){
     return this._httpClient.put(`http://localhost:3000/profesores/${profesor.id}`, profesor);
   }
+
+
 }
