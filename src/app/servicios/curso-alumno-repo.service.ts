@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class CursoAlumnoRepoService {
 
   listadoCursosAlumnos: curso_alumno[] = [];
-
+  
   constructor(private _httpClient: HttpClient) { }
 
   getAllCursosAlumnos() {

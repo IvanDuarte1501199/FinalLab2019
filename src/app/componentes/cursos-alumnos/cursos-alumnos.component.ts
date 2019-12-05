@@ -18,12 +18,13 @@ export class CursosAlumnosComponent implements OnInit {
 
   nuevoAlumnoDeCurso: curso_alumno = new curso_alumno(null, null);
   cursoElegido: curso = new curso('', null, null, null, null);
-  profesorDelCurso: profesor = new profesor(null,'','',null);
+  profesorDelCurso: profesor = new profesor(null, '', '', null);
   alumnoDelCurso: alumno = new alumno(null, '', '', null);
-
+  
   constructor(private _cursoRepoService: CursosRepoService, private _cursoAlumnoRepoService: CursoAlumnoRepoService,
     private _profesorRepoService: ProfesorRepoService) {
     this.listadoCursos = this._cursoRepoService.devolverCursos();
+
   }
 
   ngOnInit() {
@@ -38,10 +39,12 @@ export class CursosAlumnosComponent implements OnInit {
   }
 
   cambiarCurso() {
+    
     console.log("entro al metodo");
     this._cursoRepoService.getCursoById(this.nuevoAlumnoDeCurso.cursoId).subscribe(
       data => { this.cursoElegido = data }
     );
+    this.verProfesor();
   }
 
   grabarCursoAlumno() {

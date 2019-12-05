@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class CursosRepoService {
 
   listadoCursos: curso[] = [];
-
+  cursoElegido: curso = new curso('',null,null,null,null);
   constructor(private _httpClient: HttpClient) { }
 
   getAllCursos() {
@@ -28,6 +28,7 @@ export class CursosRepoService {
  
   getCursoById(cursoId: number) {
     return this._httpClient.get<curso>(`http://localhost:3000/cursos/${cursoId}`);
+    
   }
 
   agregarCurso(nuevoCurso: curso) {
