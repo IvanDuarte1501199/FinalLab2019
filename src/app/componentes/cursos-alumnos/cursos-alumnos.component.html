@@ -7,11 +7,14 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">Curso</span>
         </div>
         
-        <select name="profesorId"  [(ngModel)]="nuevoAlumnoDeCurso.cursoId" (onChange)="cambiarCurso()">
-            <option  [ngValue]="curso.id" *ngFor="let curso of _cursoRepoService.listadoCursos">{{ curso.nombre }} </option>
+        <select  name="cursoAlumnoId"  [(ngModel)]="nuevoAlumnoDeCurso.cursoId"  (change)="cambiarCurso()" >
+            <option [ngValue]="curso.id" *ngFor="let curso of _cursoRepoService.listadoCursos" >{{ curso.nombre }} </option>
         </select>
         <div [hidden]="nuevoAlumnoDeCurso.cursoId == null" >
             {{nuevoAlumnoDeCurso.cursoId}} 
+            {{cursoElegido.id}}
+            {{cursoElegido.nombre}}
+            {{profesorDelCurso.nombre   }}
         </div>
         
     </div>
