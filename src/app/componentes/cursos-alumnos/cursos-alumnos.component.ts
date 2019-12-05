@@ -6,6 +6,7 @@ import { CursoAlumnoRepoService } from 'src/app/servicios/curso-alumno-repo.serv
 import { alumno } from 'src/app/modelo/alumno';
 import { ProfesorRepoService } from 'src/app/servicios/profesor-repo.service';
 import { profesor } from 'src/app/modelo/profesor';
+import { AlumnoRepoService } from 'src/app/servicios/alumno-repo.service';
 
 @Component({
   selector: 'app-cursos-alumnos',
@@ -19,10 +20,12 @@ export class CursosAlumnosComponent implements OnInit {
   nuevoAlumnoDeCurso: curso_alumno = new curso_alumno(null, null);
   cursoElegido: curso = new curso('', null, null, null, null);
   profesorDelCurso: profesor = new profesor(null, '', '', null);
-  alumnoDelCurso: alumno = new alumno(null, '', '', null);
-  
+  profesorDelCursoActual: profesor = new profesor(null, '', '', null);
+  profesorAuxDelCurso: profesor = new profesor(null, '', '', null);
+  alumnosDelCurso: alumno[] = [];
+
   constructor(private _cursoRepoService: CursosRepoService, private _cursoAlumnoRepoService: CursoAlumnoRepoService,
-    private _profesorRepoService: ProfesorRepoService) {
+    private _profesorRepoService: ProfesorRepoService, private _alumnoRepoService: AlumnoRepoService) {
     this.listadoCursos = this._cursoRepoService.devolverCursos();
 
   }
@@ -30,21 +33,42 @@ export class CursosAlumnosComponent implements OnInit {
   ngOnInit() {
   }
 
-  verProfesor() {
-    //tira error el primer profe
-    console.log("entro al metodo");
-    this._profesorRepoService.getProfesorById(this.cursoElegido.profesorId).subscribe(
+
+
+  verProfesorActual(profesorId) {
+    this._profesorRepoService.getProfesorById(profesorId).subscribe(
+      data => { this.profesorDelCursoActual = data }
+    );
+    return this.profesorDelCursoActual;
+  }
+
+
+  verProfesor(profesorId) {
+    this._profesorRepoService.getProfesorById(profesorId).subscribe(
       data => { this.profesorDelCurso = data }
+    );
+    return this.profesorDelCurso;
+  }
+  verProfesorAuxiliar(profesorId) {
+    this._profesorRepoService.getProfesorById(profesorId).subscribe(
+      data => { this.profesorAuxDelCurso = data }
     );
   }
 
-  cambiarCurso() {
-    
-    console.log("entro al metodo");
-    this._cursoRepoService.getCursoById(this.nuevoAlumnoDeCurso.cursoId).subscribe(
-      data => { this.cursoElegido = data }
+  cambiarCurso(cursoId: number) {
+    this._cursoRepoService.getCursoById(cursoId).subscribe(
+      data => {
+        this.cursoElegido = data;
+        this.verProfesor(this.cursoElegido.profesorId);
+        if(this.cursoElegido.profesorauxId !== null){
+          this.verProfesorAuxiliar(this.cursoElegido.profesorauxId);
+        }else{
+          this.profesorAuxDelCurso = new profesor(null, '', '', null);
+        }
+      }
     );
-    this.verProfesor();
+
+
   }
 
   grabarCursoAlumno() {

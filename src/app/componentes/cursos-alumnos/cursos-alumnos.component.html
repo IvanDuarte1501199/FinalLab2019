@@ -2,20 +2,79 @@
     <div>
         <h3 style="text-align: center;">Informacion de Cursos</h3>
     </div>
-    <div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Curso</span>
-        </div>
-        
-        <select  name="cursoAlumnoId"  [(ngModel)]="nuevoAlumnoDeCurso.cursoId"  (change)="cambiarCurso()" >
-            <option [ngValue]="curso.id" *ngFor="let curso of _cursoRepoService.listadoCursos" >{{ curso.nombre }} </option>
-        </select>
-        <div [hidden]="nuevoAlumnoDeCurso.cursoId == null" >
-            {{nuevoAlumnoDeCurso.cursoId}} 
-            {{cursoElegido.id}}
-            {{cursoElegido.nombre}}
-            {{profesorDelCurso.nombre}}
-        </div>
-        
+
+    <div>
+        <table class="table" style="border: solid 1px;">
+            <tr>
+                <th>Nombre de curso</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Fin</th>
+            </tr>
+            <tr *ngFor="let curso of _cursoRepoService.listadoCursos">
+                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.fechaInicio }}</td>
+                <td>{{ curso.fechaFin }}</td>
+                <td class="btn btn-danger" (click)="cambiarCurso(curso.id)">Informacion</td>
+            </tr>
+        </table>
     </div>
+
+
+    <div [hidden]="cursoElegido.id == 0">
+
+        <h1 style="text-align: center;">{{cursoElegido.nombre}}</h1>
+
+        <span style="font-size:0.5cm;">
+            <span style="font-family:'Times New Roman', Times, serif; padding: 10px;">
+                Profesor a Cargo:
+            </span>
+            {{profesorDelCurso.apellido}}, {{profesorDelCurso.nombre}}
+        </span>
+
+        <span [hidden]="profesorAuxDelCurso.id === 0" style="font-size:0.5cm;">
+            <span style="font-family:'Times New Roman', Times, serif; padding: 200px;">
+                Profesor Auxiliar:
+            </span>
+            {{profesorAuxDelCurso.apellido}}, {{profesorAuxDelCurso.nombre}}
+        </span><br>
+
+        <span style="font-size:0.5cm;">
+            <span style="font-family:'Times New Roman', Times, serif; padding: 10px;">
+                Fecha de Inicio:
+            </span>
+            {{cursoElegido.fechaInicio}}
+        </span>
+
+        <span style="font-size:0.5cm;">
+            <span style="font-family:'Times New Roman', Times, serif; padding: 200px;">
+                Fecha de Finalizacion
+            </span>
+            {{cursoElegido.fechaFin}}
+        </span>
+
+    </div>
+
+    <div>
+        <h3 style="text-align: center;">Listado Alumnos</h3>
+
+        <table class="table" style="border: solid 1px;">
+            <tr>
+                <th>Dni</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha de Nacimiento</th>
+            </tr>
+            <tr *ngFor="let alumno of _alumnoRepoService.listadoAlumnos">
+                <td>{{ alumno.dni }}</td>
+                <td>{{ alumno.nombre }}</td>
+                <td>{{ alumno.apellido }}</td>
+                <td>{{ alumno.fechaNacimiento }}</td>
+
+            </tr>
+        </table>
+
+    </div>
+
+
+
 </form>

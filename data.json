@@ -62,6 +62,14 @@
       "fechaFin": "2222-02-22",
       "profesorId": 1,
       "profesorauxId": 2
+    },
+    {
+      "id": 10,
+      "nombre": "Laboratorio 4",
+      "fechaInicio": "1111-11-11",
+      "fechaFin": "2222-11-11",
+      "profesorId": 1,
+      "profesorauxId": null
     }
   ]
 }
