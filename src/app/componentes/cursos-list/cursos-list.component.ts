@@ -10,7 +10,7 @@ import { ProfesorRepoService } from 'src/app/servicios/profesor-repo.service';
   styleUrls: ['./cursos-list.component.css']
 })
 export class CursosListComponent implements OnInit {
-
+  busqueda: string = "";
   cursoSeleccionado: curso;
   profesorDelCurso: profesor= new profesor(12,"ivan","cac",null );
   constructor(private _cursoRepoService: CursosRepoService, private _profesorRepoService: ProfesorRepoService) { }

@@ -1,8 +1,15 @@
-<form (ngSubmit)="grabarCursoAlumno()">
-    <div>
-        <h3 style="text-align: center;">Informacion de Cursos</h3>
-    </div>
+<div>
+    <h3 style="text-align: center;">Informacion de Cursos</h3>
+</div>
+<div class="form-group">
+    <label>Buscar</label>
+    <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Nombre">
+</div>
 
+<form (ngSubmit)="grabarCursoAlumno()">
+    
+
+    
     <div>
         <table class="table" style="border: solid 1px;">
             <tr>
@@ -10,7 +17,7 @@
                 <th>Fecha de Inicio</th>
                 <th>Fecha de Fin</th>
             </tr>
-            <tr *ngFor="let curso of _cursoRepoService.listadoCursos">
+            <tr *ngFor="let curso of _cursoRepoService.listadoCursos | buscar:busqueda">
                 <td>{{ curso.nombre }}</td>
                 <td>{{ curso.fechaInicio }}</td>
                 <td>{{ curso.fechaFin }}</td>
@@ -31,8 +38,8 @@
             {{profesorDelCurso.apellido}}, {{profesorDelCurso.nombre}}
         </span>
 
-        <span [hidden]="profesorAuxDelCurso.id === 0" style="font-size:0.5cm;">
-            <span style="font-family:'Times New Roman', Times, serif; padding: 200px;">
+        <span [hidden]="profesorAuxDelCurso.id === 0" style="font-size:0.5cm; padding: 100px;">
+            <span style="font-family:'Times New Roman', Times, serif; ">
                 Profesor Auxiliar:
             </span>
             {{profesorAuxDelCurso.apellido}}, {{profesorAuxDelCurso.nombre}}
@@ -45,8 +52,8 @@
             {{cursoElegido.fechaInicio}}
         </span>
 
-        <span style="font-size:0.5cm;">
-            <span style="font-family:'Times New Roman', Times, serif; padding: 200px;">
+        <span style="font-size:0.5cm;  padding: 100px;">
+            <span style="font-family:'Times New Roman', Times, serif;">
                 Fecha de Finalizacion
             </span>
             {{cursoElegido.fechaFin}}

@@ -13,8 +13,9 @@ import { PantallaPrincipalComponent } from './componentes/pantalla-principal/pan
 import { CursosFormComponent } from './componentes/cursos-form/cursos-form.component';
 import { CursosListComponent } from './componentes/cursos-list/cursos-list.component';
 import { CursosAlumnosComponent } from './componentes/cursos-alumnos/cursos-alumnos.component';
+import { Buscar } from './pipes/buscador';
 
-const rutas: Routes = [
+const rutas: Routes = [ 
   {path: 'alumnos-form', component: AlumnosFormComponent },
   {path: 'alumnos-list', component: AlumnosListComponent },
   {path: 'profesores-list', component: ProfesoresListComponent },
@@ -38,6 +39,7 @@ const rutas: Routes = [
     CursosFormComponent,
     CursosListComponent,
     CursosAlumnosComponent,
+    Buscar
   ],
   imports: [
     BrowserModule,

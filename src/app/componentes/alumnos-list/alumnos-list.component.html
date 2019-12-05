@@ -1,6 +1,9 @@
 <div>
   <h3 style="text-align: center;">Listado Alumnos</h3>
-
+  <div class="form-group">
+    <label>Buscar</label>
+    <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Nombre">
+  </div>
   <table class="table" style="border: solid 1px;">
     <tr>
       <th>Dni</th>
@@ -8,7 +11,7 @@
       <th>Apellido</th>
       <th>Fecha de Nacimiento</th>
     </tr>
-    <tr *ngFor="let alumno of _alumnoRepoService.listadoAlumnos">
+    <tr *ngFor="let alumno of _alumnoRepoService.listadoAlumnos | buscar:busqueda">
       <td>{{ alumno.dni }}</td>
       <td>{{ alumno.nombre }}</td>
       <td>{{ alumno.apellido }}</td>

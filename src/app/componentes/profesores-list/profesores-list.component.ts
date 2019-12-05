@@ -8,7 +8,7 @@ import { ProfesorRepoService } from 'src/app/servicios/profesor-repo.service';
   styleUrls: ['./profesores-list.component.css']
 })
 export class ProfesoresListComponent implements OnInit {
-
+  busqueda: string = "";
   profesorSeleccionado: profesor;
 
   constructor(private _profesorRepoService: ProfesorRepoService) { }
@@ -19,16 +19,16 @@ export class ProfesoresListComponent implements OnInit {
 
   obtenerProfesor(alumnoId: number) {
     this._profesorRepoService.getProfesorById(alumnoId)
-    .subscribe((alu) => {
-      this.profesorSeleccionado = alu;
-    });
+      .subscribe((alu) => {
+        this.profesorSeleccionado = alu;
+      });
   }
 
   borrarProfesor(alumnoId: number) {
     this._profesorRepoService.borrarProfesor(alumnoId)
-    .subscribe((response) => {
-      console.log('se borro el profesor ', response);
-      this._profesorRepoService.getAllProfesores();
-    });
+      .subscribe((response) => {
+        console.log('se borro el profesor ', response);
+        this._profesorRepoService.getAllProfesores();
+      });
   }
 }

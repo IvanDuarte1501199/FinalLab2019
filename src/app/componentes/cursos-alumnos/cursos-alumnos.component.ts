@@ -23,7 +23,8 @@ export class CursosAlumnosComponent implements OnInit {
   profesorDelCursoActual: profesor = new profesor(null, '', '', null);
   profesorAuxDelCurso: profesor = new profesor(null, '', '', null);
   alumnosDelCurso: alumno[] = [];
-
+  busqueda: string = "";
+  
   constructor(private _cursoRepoService: CursosRepoService, private _cursoAlumnoRepoService: CursoAlumnoRepoService,
     private _profesorRepoService: ProfesorRepoService, private _alumnoRepoService: AlumnoRepoService) {
     this.listadoCursos = this._cursoRepoService.devolverCursos();

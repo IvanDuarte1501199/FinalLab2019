@@ -10,7 +10,7 @@ import { AlumnoRepoService } from 'src/app/servicios/alumno-repo.service';
 export class AlumnosListComponent implements OnInit {
 
   alumnoSeleccionado: alumno;
-
+  busqueda: string = "";
   constructor(private _alumnoRepoService: AlumnoRepoService) { }
 
   ngOnInit() {
