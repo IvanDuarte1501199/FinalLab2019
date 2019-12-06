@@ -4,6 +4,7 @@
     <label>Buscar</label>
     <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Nombre">
   </div>
+
   <table class="table" style="border: solid 1px;">
     <tr>
       <th>Dni</th>
@@ -17,8 +18,39 @@
       <td>{{ alumno.apellido }}</td>
       <td>{{ alumno.fechaNacimiento }}</td>
       <td class="btn btn-danger" (click)="borrarAlumno(alumno.id)">Borrar</td>
-      <td class="btn btn-warning" (click)="formulario.editarAlumno(alumno.id)">Editar</td>
+      <td class="btn btn-warning" (click)="formulario.editarAlumno(alumno.id)" (click)="VerEdicion()">Editar</td>
+      <td class="btn btn-success" (click)="InscribirAlumno(alumno.id)" >Inscribir a curso</td>
     </tr>
   </table>
-  <app-alumnos-form #formulario></app-alumnos-form>
+
+  <div [hidden]="inscribir === false">
+    <h3 style="text-align: center;">Seleccione Curso para Inscribir</h3>
+    <div class="form-group">
+      <label>Buscar</label>
+      <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Nombre">
+    </div>
+    <table class="table" style="border: solid 1px;">
+      <tr>
+        <th>Nombre de curso</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha de Fin</th>
+        <th>Profesor</th>
+        <th>Profesor Auxiliar</th>
+      </tr>
+      <tr *ngFor="let curso of _cursoRepoService.listadoCursos | buscar:busqueda">
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.fechaInicio }}</td>
+        <td>{{ curso.fechaFin }}</td>
+        <td>{{ curso.profesorId  }}</td>
+        <td>{{ curso.profesorauxId }}</td>
+        <td class="btn btn-success" (click)="grabarCursoAlumno(curso.id)">Inscribir</td>
+      </tr>
+    </table>
+  </div>
+
+
+
+
+
+  <app-alumnos-form #formulario [hidden]="inscribir !== false"></app-alumnos-form>
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { curso_alumno } from '../modelo/curso_alumno';
 import { HttpClient } from '@angular/common/http';
+import { alumno } from '../modelo/alumno';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,31 @@ import { HttpClient } from '@angular/common/http';
 export class CursoAlumnoRepoService {
 
   listadoCursosAlumnos: curso_alumno[] = [];
+  listadoAlumnosFiltrado: alumno[] = [];
   
   constructor(private _httpClient: HttpClient) { }
+
+  getAlumnosFiltrados(cursoId: number) {
+    this.listadoAlumnosFiltrado = [];
+  
+    this._httpClient.get<alumno[]>('http://localhost:3000/alumnos')
+    .subscribe(
+      (data) => {
+        
+        data.forEach(alu => {
+          
+          this.listadoCursosAlumnos.forEach(curalu => {
+            
+            if(curalu.alumnoId === alu.id && curalu.cursoId === cursoId) {
+              this.listadoAlumnosFiltrado.push(alu);
+            }
+          });
+        });
+      }
+    )
+    return this.listadoAlumnosFiltrado;
+  }
+
 
   getAllCursosAlumnos() {
     this._httpClient.get<curso_alumno[]>('http://localhost:3000/cursos_alumno')

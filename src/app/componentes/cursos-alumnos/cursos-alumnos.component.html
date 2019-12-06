@@ -21,7 +21,7 @@
                 <td>{{ curso.nombre }}</td>
                 <td>{{ curso.fechaInicio }}</td>
                 <td>{{ curso.fechaFin }}</td>
-                <td class="btn btn-danger" (click)="cambiarCurso(curso.id)">Informacion</td>
+                <td class="btn btn-warning" (click)="cambiarCurso(curso.id)">Informacion</td>
             </tr>
         </table>
     </div>
@@ -60,8 +60,10 @@
         </span>
 
     </div>
-
-    <div>
+    <div [hidden]="_cursoAlumnoRepoService.listadoAlumnosFiltrado.length > 0" [hidden]="cursoElegido.id == 0" style="padding: 10px;">
+        <B>NO HAY ALUMNOS INSCRIPTOS A ESTA MATERIA</B>
+    </div>
+    <div [hidden]="_cursoAlumnoRepoService.listadoAlumnosFiltrado.length === 0">
         <h3 style="text-align: center;">Listado Alumnos</h3>
 
         <table class="table" style="border: solid 1px;">
@@ -71,12 +73,11 @@
                 <th>Apellido</th>
                 <th>Fecha de Nacimiento</th>
             </tr>
-            <tr *ngFor="let alumno of _alumnoRepoService.listadoAlumnos">
+            <tr *ngFor="let alumno of _cursoAlumnoRepoService.listadoAlumnosFiltrado">
                 <td>{{ alumno.dni }}</td>
                 <td>{{ alumno.nombre }}</td>
                 <td>{{ alumno.apellido }}</td>
                 <td>{{ alumno.fechaNacimiento }}</td>
-
             </tr>
         </table>
 

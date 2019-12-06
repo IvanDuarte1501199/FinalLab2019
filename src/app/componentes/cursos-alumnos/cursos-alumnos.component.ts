@@ -20,29 +20,16 @@ export class CursosAlumnosComponent implements OnInit {
   nuevoAlumnoDeCurso: curso_alumno = new curso_alumno(null, null);
   cursoElegido: curso = new curso('', null, null, null, null);
   profesorDelCurso: profesor = new profesor(null, '', '', null);
-  profesorDelCursoActual: profesor = new profesor(null, '', '', null);
   profesorAuxDelCurso: profesor = new profesor(null, '', '', null);
-  alumnosDelCurso: alumno[] = [];
   busqueda: string = "";
-  
   constructor(private _cursoRepoService: CursosRepoService, private _cursoAlumnoRepoService: CursoAlumnoRepoService,
     private _profesorRepoService: ProfesorRepoService, private _alumnoRepoService: AlumnoRepoService) {
     this.listadoCursos = this._cursoRepoService.devolverCursos();
-
+    _cursoAlumnoRepoService.getAllCursosAlumnos();
   }
 
   ngOnInit() {
   }
-
-
-
-  verProfesorActual(profesorId) {
-    this._profesorRepoService.getProfesorById(profesorId).subscribe(
-      data => { this.profesorDelCursoActual = data }
-    );
-    return this.profesorDelCursoActual;
-  }
-
 
   verProfesor(profesorId) {
     this._profesorRepoService.getProfesorById(profesorId).subscribe(
@@ -61,6 +48,7 @@ export class CursosAlumnosComponent implements OnInit {
       data => {
         this.cursoElegido = data;
         this.verProfesor(this.cursoElegido.profesorId);
+        this._cursoAlumnoRepoService.getAlumnosFiltrados(cursoId); 
         if(this.cursoElegido.profesorauxId !== null){
           this.verProfesorAuxiliar(this.cursoElegido.profesorauxId);
         }else{
@@ -68,7 +56,7 @@ export class CursosAlumnosComponent implements OnInit {
         }
       }
     );
-
+    
 
   }
 

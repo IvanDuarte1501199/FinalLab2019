@@ -29,7 +29,8 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">Profesor Asignado</span>
         </div>
         <select name="profesorId" [(ngModel)]="nuevoCurso.profesorId">
-            <option [ngValue]="pro.id" *ngFor="let pro of _profesorRepoService.listadoProfesores">{{ pro.apellido }}, {{ pro.nombre }}</option>
+            <option [ngValue]="pro.id" *ngFor="let pro of _profesorRepoService.listadoProfesores">{{ pro.apellido }},
+                {{ pro.nombre }}</option>
         </select>
     </div>
     <div class="input-group input-group-sm mb-3">
@@ -37,12 +38,10 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">Profesor Auxiliar</span>
         </div>
         <select name="profesorId" [(ngModel)]="nuevoCurso.profesorauxId">
-            <option [ngValue]="pro.id" *ngFor="let pro of _profesorRepoService.listadoProfesores">{{ pro.apellido }}, {{ pro.nombre }}</option>
+            <option [ngValue]="pro.id" *ngFor="let pro of _profesorRepoService.listadoProfesores">{{ pro.apellido }},
+                {{ pro.nombre }}</option>
         </select>
     </div>
-
-
-
 
     <button class="btn btn-success">Grabar</button><br>
 </form>
