@@ -1,3 +1,4 @@
+
 <div>
   <h3 style="text-align: center;">Listado Cursos</h3>
   <div class="form-group">
@@ -14,8 +15,8 @@
     </tr>
     <tr *ngFor="let curso of _cursoRepoService.listadoCursos | buscar:busqueda">
       <td>{{ curso.nombre }}</td>
-      <td>{{ curso.fechaInicio }}</td>
-      <td>{{ curso.fechaFin }}</td>
+      <td>{{ curso.fechaInicio | date: 'dd-MM-yyyy'  }} </td>
+      <td>{{ curso.fechaFin | date: 'dd-MM-yyyy' }}</td>
       <td>{{ curso.profesorId  }}</td>
       <td>{{ curso.profesorauxId }}</td>
       <td class="btn btn-danger" (click)="borrarCurso(curso.id)">Borrar</td>

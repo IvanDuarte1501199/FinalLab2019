@@ -11,26 +11,31 @@ import { profesor } from 'src/app/modelo/profesor';
 })
 export class CursosFormComponent implements OnInit {
 
-
-
-  nuevoCurso: curso = new curso('', null, null, null, null);
   edicion: boolean = false;
-  dd: number = new Date().getDate();
-  mm: number = new Date().getMonth() + 1;
-  yyyy: number = new Date().getFullYear();
-  dd_mm_yyyy: string;
-  yyyy_mm_dd: string;
+  dd: string;
+  mm: string ;
+  yyyy: string;
+  set_date: string;
+  nuevoCurso: curso = new curso('', new Date(this.set_date), new Date(this.set_date), null, null);
   constructor(private _cursoRepoService: CursosRepoService, private _profesorRepoService: ProfesorRepoService) {
     this._profesorRepoService.devolverProfesores();
+    this.setFecha();
   }
 
-  ngOnInit() {
+  ngOnInit() {  
   }
-  setFechaInicio() {
-    this.dd_mm_yyyy = this.dd.toString() + this.mm.toString() + this.yyyy.toString();
-    this.yyyy_mm_dd = this.yyyy.toString() + '-' + (this.mm - 1).toString() + '-' + this.dd.toString();
-    console.log(this.dd.toString() + this.mm.toString() + this.yyyy.toString());
-    document.getElementById("inputFechaInicio").setAttribute("value", this.yyyy_mm_dd);
+  setFecha() {
+    //console.log(date.toLocaleDateString());
+    this.dd = new Date().getDate().toString();
+    this.mm = (new Date().getMonth() + 1).toString();
+    this.yyyy = new Date().getFullYear().toString();
+    if (parseInt(this.dd) < 10) {
+      this.dd = '0' + this.dd
+    }
+    if (parseInt(this.mm) < 10) {
+      this.mm = '0' + this.mm
+    }
+    this.set_date = this.yyyy + '-' + this.mm + '-' + this.dd;
   }
 
   grabarCurso() {

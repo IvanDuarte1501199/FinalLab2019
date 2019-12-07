@@ -16,7 +16,7 @@ export class CursoAlumnoRepoService {
   getAlumnosFiltrados(cursoId: number) {
     this.listadoAlumnosFiltrado = [];
   
-    this._httpClient.get<alumno[]>('http://localhost:3000/alumnos')
+    this._httpClient.get<alumno[]>('http://localhost:4000/api/alumnos')
     .subscribe(
       (data) => {
         

@@ -11,7 +11,7 @@ import { ProfesorRepoService } from 'src/app/servicios/profesor-repo.service';
 })
 export class CursosListComponent implements OnInit {
   busqueda: string = "";
-  cursoSeleccionado: curso;
+  cursoSeleccionado: curso; 
   profesorDelCurso: profesor= new profesor(12,"ivan","cac",null );
   constructor(private _cursoRepoService: CursosRepoService, private _profesorRepoService: ProfesorRepoService) { }
 

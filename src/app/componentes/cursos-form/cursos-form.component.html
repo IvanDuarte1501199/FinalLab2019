@@ -12,15 +12,15 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de Inicio</span>
         </div>
-        <input id="inputFechaInicio" (click)="setFechaInicio()" name="cursofechaIncio" [(ngModel)]="nuevoCurso.fechaInicio" type="date" class="form-control"
-            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        <input id="inputFechaInicio" name="cursofechaIncio" [(ngModel)]="nuevoCurso.fechaInicio" type="date" class="form-control" 
+        [min] = "set_date" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
 
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de Finalizacion</span>
         </div>
-        <input name="cursofechaFin" [(ngModel)]="nuevoCurso.fechaFin" type="date" class="form-control"
+        <input name="cursofechaFin" [(ngModel)]="nuevoCurso.fechaFin" type="date" class="form-control" [min] = "set_date"
             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
 
@@ -38,7 +38,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Profesor Auxiliar</span>
         </div>
-        <select name="profesorId" [(ngModel)]="nuevoCurso.profesorauxId">
+        <select name="profesorauxId" [(ngModel)]="nuevoCurso.profesorauxId">
                 <option [ngValue]="null" disabled>Elija un profesor </option>
             <option [ngValue]="pro.id" *ngFor="let pro of _profesorRepoService.listadoProfesores">{{ pro.apellido }},
                 {{ pro.nombre }}</option>

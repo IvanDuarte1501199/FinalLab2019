@@ -15,7 +15,7 @@
       <td>{{ profesor.dni }}</td>
       <td>{{ profesor.nombre }}</td>
       <td>{{ profesor.apellido }}</td>
-      <td>{{ profesor.fechaNacimiento }}</td>
+      <td>{{ profesor.fechaNacimiento | date: 'dd-MM-yyyy' }}</td>
       <td class="btn btn-danger" (click)="borrarProfesor(profesor.id)">Borrar</td>
       <td class="btn btn-warning" (click)="formulario.editarProfesor(profesor.id)">Editar</td>
     </tr>
