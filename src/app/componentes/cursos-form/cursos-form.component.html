@@ -12,7 +12,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de Inicio</span>
         </div>
-        <input name="cursofechaIncio" [(ngModel)]="nuevoCurso.fechaInicio" type="date" class="form-control"
+        <input id="inputFechaInicio" (click)="setFechaInicio()" name="cursofechaIncio" [(ngModel)]="nuevoCurso.fechaInicio" type="date" class="form-control"
             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
 
@@ -29,6 +29,7 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">Profesor Asignado</span>
         </div>
         <select name="profesorId" [(ngModel)]="nuevoCurso.profesorId">
+            <option [ngValue]="null" disabled>Elija un profesor</option>
             <option [ngValue]="pro.id" *ngFor="let pro of _profesorRepoService.listadoProfesores">{{ pro.apellido }},
                 {{ pro.nombre }}</option>
         </select>
@@ -38,6 +39,7 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">Profesor Auxiliar</span>
         </div>
         <select name="profesorId" [(ngModel)]="nuevoCurso.profesorauxId">
+                <option [ngValue]="null" disabled>Elija un profesor </option>
             <option [ngValue]="pro.id" *ngFor="let pro of _profesorRepoService.listadoProfesores">{{ pro.apellido }},
                 {{ pro.nombre }}</option>
         </select>

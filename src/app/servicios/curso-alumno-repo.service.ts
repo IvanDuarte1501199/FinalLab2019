@@ -36,14 +36,14 @@ export class CursoAlumnoRepoService {
 
 
   getAllCursosAlumnos() {
-    this._httpClient.get<curso_alumno[]>('http://localhost:3000/cursos_alumno')
+    this._httpClient.get<curso_alumno[]>('http://localhost:4000/api/cursos_alumno')
     .subscribe(
       (data) => this.listadoCursosAlumnos = data
     );
   }
   
   devolverCursosAlumnos() {
-    this._httpClient.get<curso_alumno[]>('http://localhost:3000/cursos_alumno')
+    this._httpClient.get<curso_alumno[]>('http://localhost:4000/api/cursos_alumno')
     .subscribe(
       (data) => this.listadoCursosAlumnos = data
     );
@@ -51,18 +51,18 @@ export class CursoAlumnoRepoService {
   }
  
   getCursoAlumnoById(cursoalumnoId: number) {
-    return this._httpClient.get<curso_alumno>(`http://localhost:3000/cursos_alumno/${cursoalumnoId}`);
+    return this._httpClient.get<curso_alumno>(`http://localhost:4000/api/cursos_alumno/${cursoalumnoId}`);
   }
 
   agregarCursoAlumno(nuevoCursoAlumno: curso_alumno) {
-    return this._httpClient.post('http://localhost:3000/cursos_alumno',  nuevoCursoAlumno);
+    return this._httpClient.post('http://localhost:4000/api/cursos_alumno',  nuevoCursoAlumno);
   }
 
   borrarCursoAlumno(cursoalumnoId: number) {
-    return this._httpClient.delete(`http://localhost:3000/cursos_alumno/${cursoalumnoId}`);
+    return this._httpClient.delete(`http://localhost:4000/api/cursos_alumno/${cursoalumnoId}`);
   }
 
   actualizarCursoAlumno(curso: curso_alumno){
-    return this._httpClient.put(`http://localhost:3000/cursos_alumno/${curso.id}`, curso);
+    return this._httpClient.put(`http://localhost:4000/api/cursos_alumno/${curso.id}`, curso);
   }
 }

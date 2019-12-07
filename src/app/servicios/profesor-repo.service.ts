@@ -12,13 +12,13 @@ export class ProfesorRepoService {
   constructor(private _httpClient: HttpClient,private _cursoRepoService:CursosRepoService) { }
 
   getAllProfesores() {
-    this._httpClient.get<profesor[]>('http://localhost:3000/profesores')
+    this._httpClient.get<profesor[]>('http://localhost:4000/api/profesores')
     .subscribe(
       (data) => this.listadoProfesores = data
     );
   }
   devolverProfesores() {
-    this._httpClient.get<profesor[]>('http://localhost:3000/profesores')
+    this._httpClient.get<profesor[]>('http://localhost:4000/api/profesores')
     .subscribe(
       (data) => this.listadoProfesores = data
     );
@@ -26,19 +26,19 @@ export class ProfesorRepoService {
   }
  
   getProfesorById(profesorId: number) {
-    return this._httpClient.get<profesor>(`http://localhost:3000/profesores/${profesorId}`);
+    return this._httpClient.get<profesor>(`http://localhost:4000/api/profesores/${profesorId}`);
   }
 
   agregarProfesor(nuevoProfesor: profesor) {
-    return this._httpClient.post('http://localhost:3000/profesores',  nuevoProfesor);
+    return this._httpClient.post('http://localhost:4000/api/profesores',  nuevoProfesor);
   }
 
   borrarProfesor(profesorId: number) {
-    return this._httpClient.delete(`http://localhost:3000/profesores/${profesorId}`);
+    return this._httpClient.delete(`http://localhost:4000/api/profesores/${profesorId}`);
   }
 
   actualizarProfesor(profesor: profesor){
-    return this._httpClient.put(`http://localhost:3000/profesores/${profesor.id}`, profesor);
+    return this._httpClient.put(`http://localhost:4000/api/profesores/${profesor.id}`, profesor);
   }
 
 

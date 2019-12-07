@@ -1,130 +1,30 @@
 {
-  "alumnos": [
-    {
-      "id": 1,
-      "dni": "4214124",
-      "nombre": "Ivan",
-      "apellido": "Duarte",
-      "fechaNacimiento": "1999-01-15"
-    },
-    {
-      "id": 3,
-      "dni": "12321213",
-      "nombre": "Carlos",
-      "apellido": "Kliphan",
-      "fechaNacimiento": "1990-10-01"
-    },
-    {
-      "id": 4,
-      "dni": "41231529",
-      "nombre": "Juan",
-      "apellido": "Altamirano",
-      "fechaNacimiento": "2000-12-11"
-    },
-    {
-      "id": 5,
-      "dni": "1241231",
-      "nombre": "Juan",
-      "apellido": "Heis",
-      "fechaNacimiento": "1992-12-10"
-    }
-  ],
+  "alumnos": [],
   "profesores": [
     {
       "id": 1,
       "dni": "451231",
-      "nombre": "Fernando",
-      "apellido": "Sato",
-      "fechaNacimiento": "1950-02-10"
+      "nombre": "4214",
+      "apellido": "rufine",
+      "fechaNacimiento": "1111-11-11"
     },
     {
       "id": 2,
-      "dni": "5123123",
-      "nombre": "Ernesto",
-      "apellido": "Cullen",
-      "fechaNacimiento": "1960-02-10"
-    },
-    {
-      "id": 3,
-      "dni": "4123123",
-      "nombre": "Ernesto",
-      "apellido": "Zapata",
-      "fechaNacimiento": "1992-02-01"
-    },
-    {
-      "id": 4,
-      "dni": "41231231",
-      "nombre": "Patata",
-      "apellido": "Martinez",
-      "fechaNacimiento": "1992-12-01"
+      "dni": "421",
+      "nombre": "vasfda",
+      "apellido": "rufine",
+      "fechaNacimiento": "0222-02-22"
     }
   ],
   "cursos": [
     {
       "id": 1,
-      "nombre": "Programacion I",
-      "fechaInicio": "2019-10-20",
-      "fechaFin": "2019-12-20",
-      "profesorId": 2,
-      "profesorauxId": 3
-    },
-    {
-      "id": 2,
-      "nombre": "Laboratorio I",
-      "fechaInicio": "2018-10-10",
-      "fechaFin": "2019-10-12",
-      "profesorId": 4,
-      "profesorauxId": 1
-    },
-    {
-      "id": 3,
-      "nombre": "Metodologia en Sistemas",
-      "fechaInicio": "2019-10-20",
-      "fechaFin": "2020-10-10",
+      "nombre": "programacion 2",
+      "fechaInicio": "1111-11-11",
+      "fechaFin": "2222-02-22",
       "profesorId": 1,
-      "profesorauxId": 4
+      "profesorauxId": null
     }
   ],
-  "cursos_alumno": [
-    {
-      "id": 1,
-      "cursoId": 1,
-      "alumnoId": 1
-    },
-    {
-      "id": 2,
-      "cursoId": 2,
-      "alumnoId": null
-    },
-    {
-      "id": 3,
-      "cursoId": 3,
-      "alumnoId": null
-    },
-    {
-      "id": 4,
-      "cursoId": 1,
-      "alumnoId": 1
-    },
-    {
-      "id": 5,
-      "cursoId": 2,
-      "alumnoId": 1
-    },
-    {
-      "id": 6,
-      "cursoId": 1,
-      "alumnoId": 4
-    },
-    {
-      "id": 7,
-      "cursoId": 2,
-      "alumnoId": 4
-    },
-    {
-      "id": 8,
-      "cursoId": 3,
-      "alumnoId": 4
-    }
-  ]
+  "cursos_alumno": []
 }
